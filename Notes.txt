@@ -1,0 +1,30 @@
+	change = (e) => {
+
+		this.props.onChange({[e.target.name]: e.target.value})
+		this.setState ({
+			[e.target.name]: e.target.value		
+		});
+		const isValid = this.validate();
+
+		if (isValid){
+			this.setState({})
+		}
+
+
+	};
+
+
+
+
+  state = {
+		fields: {}
+	};
+
+  onChange = updatedValue => {
+    this.setState({
+      fields: {
+        ...this.state.fields,
+        ...updatedValue
+      }
+    });
+  };
